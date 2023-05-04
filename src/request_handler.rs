@@ -1,10 +1,6 @@
-use crate::http::{Method, Response, StatusCode};
-use std::{
-    fmt::format,
-    fs::{self, canonicalize},
-};
-
 use super::server::Handler;
+use crate::http::{Method, Response, StatusCode};
+use std::fs::{self};
 pub struct RequestHandler {
     public_path: String,
 }

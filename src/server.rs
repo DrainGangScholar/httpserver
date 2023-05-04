@@ -1,13 +1,11 @@
-use request::ParseError;
-use response::Response;
-
 use crate::http::request;
 use crate::http::response;
 use crate::http::Request;
 use crate::http::StatusCode;
+use request::ParseError;
+use response::Response;
 use std::convert::TryFrom;
-use std::convert::TryInto;
-use std::io::{Read, Write};
+use std::io::Read;
 use std::net::TcpListener;
 
 pub trait Handler {

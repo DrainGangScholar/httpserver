@@ -1,8 +1,5 @@
-use http::Method;
-use http::Request;
 use request_handler::RequestHandler;
 use server::Server;
-use std::default;
 use std::env;
 mod http;
 mod request_handler;
