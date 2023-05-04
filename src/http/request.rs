@@ -12,6 +12,18 @@ pub struct Request<'buf> {
     query: Option<QueryString<'buf>>,
     method: Method,
 }
+
+impl<'buf> Request<'buf> {
+    pub fn path(&self) -> &str {
+        &self.path
+    }
+    pub fn method(&self) -> &Method {
+        &self.method
+    }
+    pub fn query(&self) -> Option<&QueryString> {
+        self.query.as_ref()
+    }
+}
 impl<'buf> TryFrom<&'buf [u8]> for Request<'buf> {
     type Error = ParseError;
     //GET /search?name=abc&sort=1 HTTP/1.1
